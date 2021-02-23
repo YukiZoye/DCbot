@@ -1,23 +1,22 @@
-import discord
+import discord, json, random
 from discord.ext import commands
-import json
-import random
-import os
 
-with open('dcbot\\bot\\set.json', 'r', encoding='UTF-8') as jfile:
+intents = discord.Intents.all()
+
+with open('C:\\Users\\USER\\Downloads\\dcbot\\bot\\set.json', 'r', encoding='UTF-8') as jfile:
     jdata = json.load(jfile)
 
-with open('D:\dc_bot\\token\\token.json', 'r', encoding='UTF-8') as jt:
+with open('C:\\Users\\USER\\Downloads\\token\\token.json', 'r', encoding='UTF-8') as jt:
     jtoken = json.load(jt)
 
-bot = commands.Bot(command_prefix = '%')
+bot = commands.Bot(command_prefix = '%', intents = intents)
 
 @bot.event
 async def on_ready():
     print(">> Bot is online <<")
 
 @bot.event
-async def joined_at(member):
+async def on_member_join(member):
     channel = bot.get_channel(int(jdata['Welcome_channel']))
     await channel.send(f'{member} join!')
 
