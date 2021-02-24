@@ -1,4 +1,4 @@
-import discord, json, random
+import discord, json, random, os, datetime
 from discord.ext import commands
 
 intents = discord.Intents.all()
@@ -25,14 +25,9 @@ async def on_member_remove(member):
     channel = bot.get_channel(int(jdata['Leave_channel']))
     await channel.send(f'{member} leave!')
 
-@bot.command()
-async def ping(ctx):
-    ping = round(bot.latency*1000)
-    await ctx.send(f'延遲為: {(ping)} (ms)')
+for filename in os.listdir('C:\\Users\\USER\\Downloads\\dcbot\\cmds'):
+    if filename.endswith('.py'):
+        bot.load_extension(F'cmds.{filename[:-3]}')
 
-@bot.command()
-async def 圖片(ctx):
-    random_picture = random.choice(jdata['url_picture'])
-    await ctx.send(random_picture)
-
-bot.run(jtoken['TOKEN'])
+if __name__ == "__main__":
+    bot.run(jtoken['TOKEN'])
