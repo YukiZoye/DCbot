@@ -2,5 +2,18 @@
     "Welcome_channel":"810474644338769941",
     "Leave_channel":"810474708604551188",
     "url_picture":["https://github.com/YukiZoye/DCbot/blob/main/picture/%E5%82%91%E5%B0%BC%E9%BE%9C.jpg?raw=true",
-           "https://github.com/YukiZoye/DCbot/blob/main/picture/%E7%9A%AE%E5%8D%A1%E6%8F%B9%E5%82%91%E5%B0%BC.jpg?raw=true"]
+            "https://github.com/YukiZoye/DCbot/blob/main/picture/%E7%9A%AE%E5%8D%A1%E6%8F%B9%E5%82%91%E5%B0%BC.jpg?raw=true",
+            "https://github.com/YukiZoye/DCbot/blob/main/picture/%E5%82%91%E5%B0%BC%E9%BE%9C%E8%AE%9A.gif?raw=true"],
+    "水瓶座":"https://astro.click108.com.tw/daily_10.php?iAstro=10",
+    "雙魚座":"https://astro.click108.com.tw/daily_11.php?iAstro=11",
+    "牡羊座":"https://astro.click108.com.tw/daily_0.php?iAstro=0",
+    "金牛座":"https://astro.click108.com.tw/daily_1.php?iAstro=1",
+    "雙子座":"https://astro.click108.com.tw/daily_2.php?iAstro=2",
+    "巨蟹座":"https://astro.click108.com.tw/daily_3.php?iAstro=3",
+    "獅子座":"https://astro.click108.com.tw/daily_4.php?iAstro=4",
+    "處女座":"https://astro.click108.com.tw/daily_5.php?iAstro=5",
+    "天秤座":"https://astro.click108.com.tw/daily_6.php?iAstro=6",
+    "天蠍座":"https://astro.click108.com.tw/daily_7.php?iAstro=7",
+    "射手座":"https://astro.click108.com.tw/daily_8.php?iAstro=8",
+    "摩羯座":"https://astro.click108.com.tw/daily_9.php?iAstro=9"
 }

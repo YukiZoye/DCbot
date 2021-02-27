@@ -1,9 +1,12 @@
 import discord, random, json, datetime
 from discord.ext import commands
-from core.classes import Cog_Extension
+from dcbot.core.classes import Cog_Extension
 
-with open('C:\\Users\\USER\\Downloads\\dcbot\\bot\\set.json', 'r', encoding='UTF-8') as jfile:
+with open('D:\\dc_bot\\dcbot\\bot\\set.json', 'r', encoding='UTF-8') as jfile:
     jdata = json.load(jfile)
+
+percent = str('%')
+time_range = datetime.timedelta(hours = -8) # 減八小時
 
 class Main(Cog_Extension):
     
@@ -17,11 +20,20 @@ class Main(Cog_Extension):
         random_picture = random.choice(jdata['url_picture'])
         await ctx.send(random_picture)
     
+
     @commands.command()
-    async def em(self, ctx):
-        embed=discord.Embed(title=":turtle::four_leaf_clover: 今天的幸運指數:four_leaf_clover::turtle:", color=0x40c9f7, timestamp=datetime.datetime.now())
+    async def 幸運指數(self, ctx):
+        number = random.randrange(1,101)
+        number = str(number)
+        time = datetime.datetime.now()
+        nowtime = time + time_range
+        username = ctx.message.author.display_name
+        avatar = ctx.message.author.avatar_url
+        embed=discord.Embed(title=":four_leaf_clover::turtle: 今天的幸運指數:turtle::four_leaf_clover:",
+                            description=("%s，你今天的幸運指數是%s%s！"%(username, number, percent)), color=0x3daae1,
+                            timestamp=nowtime)
         embed.set_thumbnail(url="https://github.com/YukiZoye/DCbot/blob/main/picture/%E5%82%91%E5%B0%BC%E9%BE%9C%E8%AE%9A.gif?raw=true")
-        embed.add_field(name="", value="", inline=False)
+        embed.set_author(name = username+"輸入指令" ,icon_url = avatar)
         await ctx.send(embed=embed)
 
 def setup(bot):
